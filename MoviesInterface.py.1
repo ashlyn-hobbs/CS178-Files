@@ -1,0 +1,70 @@
+# name: YOUR NAME HERE
+# date: 
+# description: Implementation of CRUD operations with DynamoDB database
+#               CS 178 Lab #9
+# proposed score: 0 (out of 5) -- if I don't change this, I agree to 0 points for this lab
+
+import boto3
+from boto3.dynamodb.conditions import Key
+
+TABLE_NAME = "Movies"
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table(TABLE_NAME)
+
+def create_movie():
+    # prompt user for Movie Title (and other attributes)
+    # add Movie to the database
+    print("creating a movie")
+    
+def print_all_movies():
+    # display all Movies in database
+    print("display all movies")
+
+def update_rating():
+    # prompt user for a Movie title
+    # prompt user for a rating
+    # update (add) rating to the database
+    print("updating rating")
+
+def delete_movie():
+    # prompt user for a Movie title
+    # delete item from the database
+    print("deleting movie")
+
+def query_movie():
+    # prompt user for the Movie title
+    # print out the average review for all reviews in list
+    print("query movie")
+
+def print_menu():
+    print("----------------------------")
+    print("Press C: to CREATE a new movie")
+    print("Press R: to READ all movies")
+    print("Press U: to UPDATE a new movie (add a review)")
+    print("Press D: to DELETE a movie")
+    print("Press Q: to Query a movie's average ratings")
+    print("Press X: to EXIT application")
+    print("----------------------------")
+
+
+def main():
+    input_char = ""
+    while input_char.upper() != "X":
+        print_menu()
+        input_char = input("Choice: ")
+        if input_char.upper() == "C":
+            create_movie()
+        elif input_char.upper() == "R":
+            print_all_movies()
+        elif input_char.upper() == "U":
+            update_rating()
+        elif input_char.upper() == "D":
+            delete_movie()
+        elif input_char.upper() == "Q":
+            query_movie()
+        elif input_char.upper() == "X":
+            print("exiting...")
+        else:
+            print('Not a valid option. Try again.')
+main()
+    
