@@ -1,0 +1,21 @@
+<!-- Author: Ashlyn Hobbs
+# Date: 4/1/2024
+# Description: Login Page that lets the user enter their username and preferred language that goes with that username
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="name">Username:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="language">Preferred Language:</label><br>
+        <input type="text" id="language" name="language" required><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
